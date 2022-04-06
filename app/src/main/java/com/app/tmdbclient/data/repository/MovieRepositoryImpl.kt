@@ -32,7 +32,21 @@ class MovieRepositoryImpl(
         return movieList
     }
 
+    suspend fun getMoviesFromDB() : List<Movie>{
+        lateinit var movieList: List<Movie>
+        try {
+            movieList = movieLocalDatasource.getMoviesFromDB()
+        }catch (exception : Exception){
+            Log.i("Tag", exception.message.toString())
+        }
+        if (movieList.size>0){
+            return movieList
+        }else{
+            movieList = getMoviesFromAPI()
+            movieLocalDatasource.saveMoviesToDB(movieList)
+        }
+        return movieList
+    }
 
-    
 }
 
