@@ -1,4 +1,4 @@
-package com.app.tmdbclient.domain
+package com.app.tmdbclient.domain.repository
 
 import com.app.tmdbclient.data.model.tvshow.TvShow
 
