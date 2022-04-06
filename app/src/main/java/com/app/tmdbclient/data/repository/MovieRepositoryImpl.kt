@@ -1,9 +1,15 @@
 package com.app.tmdbclient.data.repository
 
+import android.util.Log
 import com.app.tmdbclient.data.model.movie.Movie
 import com.app.tmdbclient.domain.repository.MovieRepository
+import java.lang.Exception
 
-class MovieRepositoryImpl : MovieRepository {
+class MovieRepositoryImpl(
+    private val movieRemoteDatasource: MovieRemoteDatasource,
+    private val movieLocalDatasource: MovieLocalDatasource,
+    private val movieCacheDatasource: MovieCacheDatasource ) : MovieRepository {
+
     override suspend fun getMovies(): List<Movie>? {
         TODO("Not yet implemented")
     }
@@ -11,4 +17,22 @@ class MovieRepositoryImpl : MovieRepository {
     override suspend fun updateMovies(): List<Movie>? {
         TODO("Not yet implemented")
     }
+
+    suspend fun getMoviesFromAPI() : List<Movie>{
+        lateinit var movieList: List<Movie>
+        try {
+            val response = movieRemoteDatasource.getMovies()
+            val body = response.body()
+            if(body!=null){
+                movieList = body.movies
+            }
+        }catch (exception : Exception){
+            Log.i("Tag", exception.message.toString())
+        }
+        return movieList
+    }
+
+
+    
 }
+
