@@ -1,5 +1,5 @@
-package com.app.tmdbclient.data
-import com.app.tmdbclient.data.Movie
+package com.app.tmdbclient.data.model.movie
+import com.app.tmdbclient.data.model.movie.Movie
 import com.google.gson.annotations.SerializedName
 
 data class MovieList(

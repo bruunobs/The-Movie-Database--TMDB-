@@ -1,8 +1,8 @@
 package com.app.tmdbclient.data.api
 
-import com.app.tmdbclient.data.ArtistList
-import com.app.tmdbclient.data.MovieList
-import com.app.tmdbclient.data.TvShowList
+import com.app.tmdbclient.data.model.artist.ArtistList
+import com.app.tmdbclient.data.model.movie.MovieList
+import com.app.tmdbclient.data.model.tvshow.TvShowList
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
