@@ -1,4 +1,4 @@
-package com.app.tmdbclient.data.repository
+package com.app.tmdbclient.data.repository.movie
 
 import com.app.tmdbclient.data.model.movie.Movie
 

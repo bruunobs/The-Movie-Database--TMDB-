@@ -1,7 +1,8 @@
-package com.app.tmdbclient.data.repository
+package com.app.tmdbclient.data.repository.movie
 
 import com.app.tmdbclient.data.db.MovieDAO
 import com.app.tmdbclient.data.model.movie.Movie
+import com.app.tmdbclient.data.repository.movie.MovieLocalDatasource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

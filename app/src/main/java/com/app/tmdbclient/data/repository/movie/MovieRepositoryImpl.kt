@@ -1,4 +1,4 @@
-package com.app.tmdbclient.data.repository
+package com.app.tmdbclient.data.repository.movie
 
 import android.util.Log
 import com.app.tmdbclient.data.model.movie.Movie
@@ -8,7 +8,8 @@ import java.lang.Exception
 class MovieRepositoryImpl(
     private val movieRemoteDatasource: MovieRemoteDatasource,
     private val movieLocalDatasource: MovieLocalDatasource,
-    private val movieCacheDatasource: MovieCacheDatasource ) : MovieRepository {
+    private val movieCacheDatasource: MovieCacheDatasource
+) : MovieRepository {
 
     override suspend fun getMovies(): List<Movie>? {
         return getMoviesFromCache()
