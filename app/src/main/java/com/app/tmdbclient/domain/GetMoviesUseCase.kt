@@ -1,4 +1,8 @@
 package com.app.tmdbclient.domain
 
-class GetMoviesUseCase {
+import com.app.tmdbclient.data.model.movie.Movie
+
+class GetMoviesUseCase(private val movieRepository: MovieRepository) {
+    suspend fun execute(): List<Movie>? = movieRepository.getMovies()
+
 }
