@@ -5,7 +5,7 @@ import com.app.tmdbclient.data.model.movie.Movie
 
 class MovieLocalDatasourceImpl(private val movieDAO: MovieDAO) : MovieLocalDatasource {
     override suspend fun getMoviesFromDB(): List<Movie> {
-        TODO("Not yet implemented")
+       return movieDAO.getMovies()
     }
 
     override suspend fun saveMoviesToDB(movies: List<Movie>) {
