@@ -1,4 +1,4 @@
-package com.app.tmdbclient.data.repository.artist
+package com.app.tmdbclient.data.repository.artist.datasource
 
 import android.provider.MediaStore
 import com.app.tmdbclient.data.model.artist.Artist
