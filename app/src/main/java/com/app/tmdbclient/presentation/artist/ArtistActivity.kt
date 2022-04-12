@@ -2,6 +2,7 @@ package com.app.tmdbclient.presentation.artist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.app.tmdbclient.R
 
 class ArtistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
