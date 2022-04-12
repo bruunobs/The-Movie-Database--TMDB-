@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TMDBClient">
         <activity
+            android:name=".presentation.tv.TvShowActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.movie.MovieActivity"
             android:exported="false" />
         <activity
