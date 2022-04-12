@@ -1,7 +1,7 @@
 package com.app.tmdbclient.data.repository.movie
 
 import com.app.tmdbclient.data.model.movie.Movie
-import com.app.tmdbclient.data.repository.movie.MovieCacheDatasource
+import com.app.tmdbclient.data.repository.movie.datasource.MovieCacheDatasource
 
 class MovieCacheDataSourceImpl : MovieCacheDatasource {
 
