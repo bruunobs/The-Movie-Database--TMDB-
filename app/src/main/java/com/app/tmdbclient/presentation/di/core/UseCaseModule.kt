@@ -1,4 +1,4 @@
-package com.app.tmdbclient.presentation.di
+package com.app.tmdbclient.presentation.di.core
 
 import com.app.tmdbclient.domain.repository.ArtistRepository
 import com.app.tmdbclient.domain.repository.MovieRepository
