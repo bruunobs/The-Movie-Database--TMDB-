@@ -15,9 +15,10 @@ import com.app.tmdbclient.data.repository.tvshow.datasource.TvShowRemoteDatasour
 import com.app.tmdbclient.domain.repository.ArtistRepository
 import com.app.tmdbclient.domain.repository.MovieRepository
 import com.app.tmdbclient.domain.repository.TvShowRepository
+import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
-
+@Module
 class RepositoryModule {
     @Provides
     @Singleton
