@@ -1,21 +1,23 @@
-package com.app.tmdbclient.presentation.movie
+package com.app.tmdbclient.presentation.artist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import com.app.tmdbclient.domain.usecase.GetArtistUseCase
 import com.app.tmdbclient.domain.usecase.GetMoviesUseCase
+import com.app.tmdbclient.domain.usecase.UpdateArtistsUseCase
 import com.app.tmdbclient.domain.usecase.UpdateMoviesUseCase
 
-class MovieViewModel(private val getMoviesUseCase: GetMoviesUseCase,
-private val updateMoviesUseCase: UpdateMoviesUseCase) : ViewModel()  {
+class ArtistViewModel(private val getArtistUseCase: GetArtistUseCase,
+                      private val updateArtistsUseCase: UpdateArtistsUseCase) : ViewModel()  {
 
-    fun getMovies() = liveData {
-        val movieList = getMoviesUseCase.execute()
-        emit(movieList)
+    fun getArtists() = liveData {
+        val artistList = getArtistUseCase.execute()
+        emit(artistList)
     }
 
-    fun updateMovies() = liveData {
-        val movieList = updateMoviesUseCase.execute()
-        emit(movieList)
+    fun updateArtists() = liveData {
+        val artistList = updateArtistsUseCase.execute()
+        emit(artistList)
     }
 
     
