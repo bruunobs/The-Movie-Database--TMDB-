@@ -8,6 +8,7 @@ import dagger.Provides
 
 @Module
 class ArtistModule {
+    @ArtistScope
     @Provides
     fun provideArtistViewModelFactory(
         getArtistUseCase: GetArtistUseCase,
