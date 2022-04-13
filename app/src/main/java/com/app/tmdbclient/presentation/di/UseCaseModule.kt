@@ -24,7 +24,7 @@ class UseCaseModule {
     }
     @Provides
     fun provideUpdateTvShowUseCase(tvShowRepository: TvShowRepository) : UpdateTvShowsUseCase{
-        return provideUpdateTvShowUseCase(tvShowRepository)
+        return UpdateTvShowsUseCase(tvShowRepository)
     }
 
     @Provides
