@@ -3,6 +3,8 @@ package com.app.tmdbclient.presentation.movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -27,10 +29,8 @@ class MovieActivity : AppCompatActivity() {
 
         movieViewModel = ViewModelProvider(this,factory)
             .get(MovieViewModel::class.java)
-        val responseLiveData = movieViewModel.getMovies()
-        responseLiveData.observe(this, Observer {
-            Log.i("TAG",it.toString())
-        })
+        initRecyclerView()
+
     }
 
 
@@ -38,5 +38,21 @@ class MovieActivity : AppCompatActivity() {
         binding.movieRecyclerView.layoutManager = LinearLayoutManager(this)
         adapter = MovieAdapter()
         binding.movieRecyclerView.adapter = adapter
+        displayPopularMovies()
+    }
+
+    private fun displayPopularMovies(){
+        binding.movieProgressBar.visibility = View.VISIBLE
+        val responseLiveData = movieViewModel.getMovies()
+        responseLiveData.observe(this, Observer {
+            if(it!=null){
+                adapter.setList(it)
+                adapter.notifyDataSetChanged()
+                binding.movieProgressBar.visibility = View.GONE
+            }else{
+                binding.movieProgressBar.visibility = View.GONE
+                Toast.makeText(applicationContext,"No data available",Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }
