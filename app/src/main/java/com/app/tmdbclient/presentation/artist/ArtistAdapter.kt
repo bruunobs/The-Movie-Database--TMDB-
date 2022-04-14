@@ -11,6 +11,6 @@ class MyViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(bindi
 
     fun bind(artist : Artist){
         binding.titleTextView.text = artist.name
-        binding.descriptionTextView.text = artist.
+
     }
 }
